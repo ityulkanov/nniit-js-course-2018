@@ -42,8 +42,9 @@ window.onload = function(){
         var fff = function(maxI){
             if (i < maxI) {
                 setTimeout(function(){
+                    console.log(maxI + '-' + i);
                 }, 1000);
-                console.log(maxI + '-' + i);
+                
                 fff(maxI-1);
             }
         };
