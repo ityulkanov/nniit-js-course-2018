@@ -26,33 +26,60 @@ window.onload = function(){
     })
 
 
-    var timer = setInterval(timerFunc, 1000);
-    var timerDiv = document.getElementById('time');
+    // var timer = setInterval(timerFunc, 1000);
+    // var timerDiv = document.getElementById('time');
 
-    function timerFunc(){
-        var t = new Date()
-        timerDiv.innerHTML = t.getHours()+':'
-        + t.getMinutes() + ':'
-        + t.getSeconds();
-    }
+    // function timerFunc(){
+    //     var t = new Date()
+    //     timerDiv.innerHTML = t.getHours()+':'
+    //     + t.getMinutes() + ':'
+    //     + t.getSeconds();
+    // }
 
 
-    function getTimer(){
-        var i = 0;
+    // function getTimer(){
+    //     var i = 0;
 
-        return function(maxI){
-            if (i < maxI) {
-                setInterval(function(){
-                    console.log(maxI + '-' + i++);
-                }, 1000)
+    //     return function(maxI){
+    //         if (i < maxI) {
+    //             setInterval(function(){
+    //                 console.log(maxI + '-' + i++);
+    //             }, 1000)
+    //         }
+    //     }
+    // }
+
+    // var t = getTimer();
+    // t(10);
+
+
+    var array = [1,2,3,4,5,6];
+    array.reduce(function(a,b){
+        a[b] = b * b;
+        return a; 
+    }, {})
+    console.log(array); 
+
+    var array1 = [[4,5],[5,6,7], [45,34,32] ]; 
+    var returnValue = array1.reduce((a, b) =>{
+        return a.concat(b); 
+    }, [])
+    console.log(returnValue); 
+
+
+    var fibonacci  = ( function() {
+        var memo = [0, 1]; 
+        var fib = function(n){
+            var result = memo[n]; 
+            if(typeof result !== 'number') {
+                result = fib(n-1) + fib(n-2); 
+                memo[n] = result; 
             }
-        }
-    }
-
-    var t = getTimer();
-    t(10);
-
-
- 
+            return result; 
+        }; 
+        return fib;
+    } ()); 
+    console.log(fibonacci(100)); 
+    
 
 }
