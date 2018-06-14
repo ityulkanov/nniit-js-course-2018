@@ -36,7 +36,7 @@ window.onload = function(){
         + t.getSeconds();
     }
 
-
+// ДЗ часть 3
     var getTimer = function (maxI){ 
         var counter = 0;
         var fff = function(){ 
@@ -48,7 +48,7 @@ window.onload = function(){
     }
     getTimer(10); 
 
-
+// ДЗ часть 1
     var array = [1,2,3,4,5,6];
     array.reduce(function(a,b){
         a[b] = b * b;
@@ -61,7 +61,7 @@ window.onload = function(){
         return a.concat(b); 
     }, [])
     console.log(returnValue); 
-
+// ДЗ часть 2
 
     var fibonacci  = ( function() {
         var memo = [0, 1]; 
