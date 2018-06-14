@@ -48,8 +48,6 @@ window.onload = function(){
     }
     getTimer(10); 
 
-    
-
 
     var array = [1,2,3,4,5,6];
     array.reduce(function(a,b){
