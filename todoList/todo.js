@@ -37,23 +37,18 @@ window.onload = function(){
     }
 
 
-    function getTimer(){
-        var i = 0;
-        var fff = function(maxI){
-            if (i < maxI) {
-                setTimeout(function(){
-                    console.log(maxI + '-' + i);
-                }, 1000);
-                
-                fff(maxI-1);
-            }
-        };
-        return fff;
+    var getTimer = function (maxI){ 
+        var counter = 0;
+        var fff = function(){ 
+        console.log(maxI + ":" + counter++); 
+            if(maxI > counter){
+                setTimeout(fff, 1000)
+            }} 
+        fff(); 
     }
-    
+    getTimer(10); 
 
-    var t = getTimer();
-    t(10);
+    
 
 
     var array = [1,2,3,4,5,6];
