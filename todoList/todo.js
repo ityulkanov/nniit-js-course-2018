@@ -26,31 +26,33 @@ window.onload = function(){
     })
 
 
-    // var timer = setInterval(timerFunc, 1000);
-    // var timerDiv = document.getElementById('time');
+    var timer = setInterval(timerFunc, 1000);
+    var timerDiv = document.getElementById('time');
 
-    // function timerFunc(){
-    //     var t = new Date()
-    //     timerDiv.innerHTML = t.getHours()+':'
-    //     + t.getMinutes() + ':'
-    //     + t.getSeconds();
-    // }
+    function timerFunc(){
+        var t = new Date()
+        timerDiv.innerHTML = t.getHours()+':'
+        + t.getMinutes() + ':'
+        + t.getSeconds();
+    }
 
 
-    // function getTimer(){
-    //     var i = 0;
+    function getTimer(){
+        var i = 0;
+        var fff = function(maxI){
+            if (i < maxI) {
+                setTimeout(function(){
+                }, 1000);
+                console.log(maxI + '-' + i);
+                fff(maxI-1);
+            }
+        };
+        return fff;
+    }
+    
 
-    //     return function(maxI){
-    //         if (i < maxI) {
-    //             setInterval(function(){
-    //                 console.log(maxI + '-' + i++);
-    //             }, 1000)
-    //         }
-    //     }
-    // }
-
-    // var t = getTimer();
-    // t(10);
+    var t = getTimer();
+    t(10);
 
 
     var array = [1,2,3,4,5,6];
@@ -79,7 +81,7 @@ window.onload = function(){
         }; 
         return fib;
     } ()); 
-    console.log(fibonacci(100)); 
+    console.log(fibonacci(10)); 
     
 
 }
